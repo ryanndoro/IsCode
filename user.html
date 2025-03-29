@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTrack - User Profile</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MedTrack</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="user.html" class="active">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+                <li><a href="logout.php" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <img src="images/profile-placeholder.jpg" alt="User profile" id="profile-image">
+                <button class="change-avatar-btn" id="change-avatar-btn">Change Photo</button>
+            </div>
+            <div class="profile-info">
+                <h2 id="profile-name">John Doe</h2>
+                <p id="profile-role">Patient</p>
+                <p id="profile-id">ID: P12345</p>
+            </div>
+        </div>
+
+        <div class="profile-tabs">
+            <button class="profile-tab active" data-tab="personal">Personal Information</button>
+            <button class="profile-tab" data-tab="medical">Medical Information</button>
+            <button class="profile-tab" data-tab="security">Security</button>
+        </div>
+
+        <div class="profile-content">
+            <div id="personal-tab" class="profile-tab-content">
+                <h3>Personal Information</h3>
+                <form id="personal-info-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" value="John" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" value="Doe" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" value="john.doe@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" value="(123) 456-7890" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" value="1980-01-01" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select id="gender" required>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                                <option value="prefer-not">Prefer not to say</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" required>123 Main St, Anytown, USA</textarea>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <div id="medical-tab" class="profile-tab-content hidden">
+                <h3>Medical Information</h3>
+                <form id="medical-info-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="blood-type">Blood Type</label>
+                            <select id="blood-type">
+                                <option value="">Unknown</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="height">Height (cm)</label>
+                            <input type="number" id="height" value="175">
+                        </div>
+                        <div class="form-group">
+                            <label for="weight">Weight (kg)</label>
+                            <input type="number" id="weight" value="75">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Allergies</label>
+                        <textarea id="allergies" placeholder="List any allergies...">Penicillin</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="conditions">Chronic Conditions</label>
+                        <textarea id="conditions" placeholder="List any chronic conditions...">Hypertension</textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="emergency-contact">Emergency Contact</label>
+                        <div class="emergency-contact-fields">
+                            <input type="text" id="emergency-name" placeholder="Name" value="Jane Doe">
+                            <input type="tel" id="emergency-phone" placeholder="Phone" value="(123) 555-7890">
+                            <input type="text" id="emergency-relation" placeholder="Relation" value="Spouse">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Save Changes</button>
+                </form>
+            </div>
+
+            <div id="security-tab" class="profile-tab-content hidden">
+                <h3>Security Settings</h3>
+                <form id="password-form">
+                    <div class="form-group">
+                        <label for="current-password">Current Password</label>
+                        <input type="password" id="current-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-password">Confirm New Password</label>
+                        <input type="password" id="confirm-password" required>
+                    </div>
+                    <button type="submit" class="btn primary-btn">Change Password</button>
+                </form>
+
+                <h3>Two-Factor Authentication</h3>
+                <div class="two-factor-container">
+                    <div class="two-factor-status">
+                        <p>Status: <span id="two-factor-status">Disabled</span></p>
+                    </div>
+                    <button class="btn secondary-btn" id="enable-2fa-btn">Enable Two-Factor Authentication</button>
+                </div>
+
+                <h3>Login Sessions</h3>
+                <div class="sessions-list" id="sessions-list">
+                    <!-- Sessions will be dynamically generated here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>MedTrack</h2>
+                <p>Your health companion</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@medtrack.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MedTrack. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

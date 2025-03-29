@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedTrack - Settings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>MedTrack</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" id="dashboard-link">Dashboard</a></li>
+                <li><a href="user.html">Profile</a></li>
+                <li><a href="settings.html" class="active">Settings</a></li>
+                <li><a href="logout.php" id="logout-btn">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="settings-container">
+        <aside class="settings-sidebar">
+            <h2>Settings</h2>
+            <nav>
+                <ul>
+                    <li><a href="#account" class="active">Account Settings</a></li>
+                    <li><a href="#notifications">Notifications</a></li>
+                    <li><a href="#privacy">Privacy & Security</a></li>
+                    <li><a href="#appearance">Appearance</a></li>
+                    <li><a href="#accessibility">Accessibility</a></li>
+                    <li><a href="#language">Language</a></li>
+                    <li><a href="#help">Help & Support</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <div class="settings-content">
+            <section id="account" class="settings-section">
+                <h2>Account Settings</h2>
+                
+                <div class="settings-card">
+                    <h3>Account Information</h3>
+                    <form id="account-info-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="settings-username">Username</label>
+                                <input type="text" id="settings-username" value="johndoe">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-email">Email</label>
+                                <input type="email" id="settings-email" value="john.doe@example.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="settings-phone">Phone Number</label>
+                                <input type="tel" id="settings-phone" value="(123) 456-7890">
+                            </div>
+                            <div class="form-group">
+                                <label for="settings-timezone">Timezone</label>
+                                <select id="settings-timezone">
+                                    <option value="utc-8">Pacific Time (UTC-8)</option>
+                                    <option value="utc-7">Mountain Time (UTC-7)</option>
+                                    <option value="utc-6">Central Time (UTC-6)</option>
+                                    <option value="utc-5" selected>Eastern Time (UTC-5)</option>
+                                    <option value="utc-4">Atlantic Time (UTC-4)</option>
+                                    <option value="utc-0">Greenwich Mean Time (UTC+0)</option>
+                                    <option value="utc+1">Central European Time (UTC+1)</option>
+                                    <option value="utc+2">Eastern European Time (UTC+2)</option>
+                                    <option value="utc+3">Moscow Time (UTC+3)</option>
+                                    <option value="utc+5:30">Indian Standard Time (UTC+5:30)</option>
+                                    <option value="utc+8">China Standard Time (UTC+8)</option>
+                                    <option value="utc+9">Japan Standard Time (UTC+9)</option>
+                                    <option value="utc+10">Australian Eastern Time (UTC+10)</option>
+                                    <option value="utc+12">New Zealand Standard Time (UTC+12)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn primary-btn">Save Changes</button>
+                    </form>
+                </div>
+                
+                <div class="settings-card">
+                    <h3>Linked Accounts</h3>
+                    <div class="linked-accounts">
+                        <div class="linked-account">
+                            <div class="account-info">
+                                <span class="account-icon">G</span>
+                                <div>
+                                    <h4>Google</h4>
+                                    <p>Not connected</p>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn">Connect</button>
+                        </div>
+                        <div class="linked-account">
+                            <div class="account-info">
+                                <span class="account-icon">F</span>
+                                <div>
+                                    <h4>Facebook</h4>
+                                    <p>Not connected</p>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn">Connect</button>
+                        </div>
+                        <div class="linked-account">
+                            <div class="account-info">
+                                <span class="account-icon">A</span>
+                                <div>
+                                    <h4>Apple</h4>
+                                    <p>Not connected</p>
+                                </div>
+                            </div>
+                            <button class="btn secondary-btn">Connect</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-card danger-zone">
+                    <h3>Danger Zone</h3>
+                    <div class="danger-actions">
+                        <div class="danger-action">
+                            <div>
+                                <h4>Deactivate Account</h4>
+                                <p>Temporarily disable your account</p>
+                            </div>
+                            <button class="btn warning-btn">Deactivate</button>
+                        </div>
+                        <div class="danger-action">
+                            <div>
+                                <h4>Delete Account</h4>
+                                <p>Permanently delete your account and all data</p>
+                            </div>
+                            <button class="btn danger-btn">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="notifications" class="settings-section hidden">
+                <h2>Notification Settings</h2>
+                
+                <div class="settings-card">
+                    <h3>Medication Reminders</h3>
+                    <div class="notification-settings">
+                        <div class="notification-setting">
+                            <div>
+                                <h4>Push Notifications</h4>
+                                <p>Receive push notifications for medication reminders</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div>
+                                <h4>Email Notifications</h4>
+                                <p>Receive email notifications for medication reminders</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div>
+                                <h4>SMS Notifications</h4>
+                                <p>Receive SMS notifications for medication reminders</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="settings-card">
+                    <h3>Doctor Communications</h3>
+                    <div class="notification-settings">
+                        <div class="notification-setting">
+                            <div>
+                                <h4>New Messages</h4>
+                                <p>Receive notifications when you get a new message from your doctor</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div>
+                                <h4>Doctor Reviews</h4>
+                                <p>Receive notifications when your doctor leaves a review</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                        <div class="notification-setting">
+                            <div>
+                                <h4>Medication Changes</h4>
+                                <p>Receive notifications when your doctor changes your medications</p>
+                            </div>
+                            <label class="toggle">
+                                <input type="checkbox" checked>
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other settings sections would continue here -->
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>MedTrack</h2>
+                <p>Your health companion</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="settings.html">Settings</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: support@medtrack.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 MedTrack. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
